@@ -9,6 +9,7 @@ box = deque(sorted(map(int, input().split()), reverse=True))
 
 
 def solve():
+    global m
     if box[0] > crane[0]:
         return -1
     count = 0
@@ -18,13 +19,13 @@ def solve():
         for i in range(m):
             b = box.popleft()
             if crane_cnt < n:
-                if crane[crane_cnt] >= w:
+                if crane[crane_cnt] >= b:
                     m -= 1
                     crane_cnt += 1
                 else:
-                    box.append(box)
+                    box.append(b)
             else:
-                box.append(box)
+                box.append(b)
         if (count >= 10000):
             break
     return count
