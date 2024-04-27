@@ -8,7 +8,7 @@ def find(x, parent, value, parentvalue):
         p, pv = parent[x], parentvalue[x]
         parent[x] = find(p, parent, value, parentvalue)
         value[x] += value[p] - pv
-        parentvalue = value[parent[x]]
+        parentvalue[x] = value[parent[x]]
     return parent[x]
 
 
