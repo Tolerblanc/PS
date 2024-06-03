@@ -5,7 +5,7 @@ input = sys.stdin.readline
 def fibo(n):
     if n <= 3:
         return n
-    prev, curr = 1, 2
+    prev, curr = 1, 1
     MOD = 1_000_000_007
     for i in range(2, n):
         prev, curr = curr % MOD, (prev + curr) % MOD
