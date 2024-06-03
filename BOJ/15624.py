@@ -3,7 +3,7 @@ input = sys.stdin.readline
 
 
 def fibo(n):
-    if n <= 3:
+    if n <= 1:
         return n
     prev, curr = 1, 1
     MOD = 1_000_000_007
