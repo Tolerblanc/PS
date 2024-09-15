@@ -1,13 +1,16 @@
 import sys
 
+sys.setrecursionlimit(100001)
 input = sys.stdin.readline
 
 v, e = map(int, input().split())
+
 
 def find(parent, x):
     if parent[x] != x:
         parent[x] = find(parent, parent[x])
     return parent[x]
+
 
 def union(parent, a, b):
     a = find(parent, a)
@@ -16,6 +19,7 @@ def union(parent, a, b):
         parent[b] = a
     else:
         parent[a] = b
+
 
 parent = [i for i in range(v + 1)]
 edges = []
